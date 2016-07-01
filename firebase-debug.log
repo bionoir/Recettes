@@ -1,0 +1,14 @@
+[debug] ----------------------------------------------------------------------
+[debug] Command:      node C:\Users\fda\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] CLI Version:  3.0.2
+[debug] Platform:     win32
+[debug] Node Version: v0.10.36
+[debug] Time:         Fri Jul 01 2016 14:44:16 GMT+0200 (W. Europe Daylight Time)
+[debug] ----------------------------------------------------------------------
+[debug] 
+[info] Starting Firebase development server...
+[info] 
+[info] Project Directory: E:\Devs\Javascript\Firebase\RecettesMenus
+[info] Public Directory: public
+[info] 
+[info] Server listening at: http://localhost:5000

@@ -1,0 +1,75 @@
+<div>
+	
+	<h2>Les produits disponibles dans le système</h2>
+	<br />
+	<input type="text" class="form-control" placeholder="Chercher ici..." ng-model="filter.productName" />
+	<br />
+	<ul>
+		<li ng-repeat="product in products | filter:filter.productName">
+			{{ product.productName }} - ({{ product.productType }} )
+			<button type="button" class="btn btn-xs btn-danger" ng-click="removeProduct(product.productRef)">
+				<i class="glyphicon glyphicon-remove"></i>
+			</button>
+			<button type="button" class="btn btn-xs btn-warning" ng-click="editProduct(product)">
+				<i class="glyphicon glyphicon-pencil"></i>
+			</button>
+		</li>
+	</ul>
+	
+	<div ng-show="selected">Confirmation modification</div>
+	
+	<br />
+	Nouveau produit
+	<br />
+	<br />
+	Nom du produit:
+	<input type="text" ng-model="newProduct.productName" />
+	<br />
+	Type de produit:
+	<input type="text" ng-model="newProduct.productType" />
+	<br />
+	<br />
+	<button ng-disabled="!newProduct.productName || !newProduct.productType" ng-click="addProduct()">Ajouter</button>
+	
+	
+	<script type="text/ng-template" id="modalProductEditionContent.html">
+      <div class="modal-header">
+          <h3>Product edition form</h3>
+      </div>
+      <form ng-submit="submit()">
+        <div class="modal-body">
+          <label>Product Name</label>
+          <input type="text" ng-model="productToEdit.productName" />
+          <label>Product Type</label>
+          <input type="text" ng-model="productToEdit.productType" />
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-warning" ng-click="cancel()">Annuler</button>
+            <button class="btn btn-primary" ng-click="ok()">Modifier</button>
+        </div>
+      </form>
+  	</script>
+	
+				
+	<!-- MODAL PART TO BE DONE in UI.BOOTSTRAP
+	<a class="btn btn-primary modal-trigger" href="#addProductModal">Ajouter</a>
+	<div id="addProductModal" class="modal">
+		<div class="modal-content">
+			<h4>Ajouter un nouveau produit</h4>
+			<form>
+				<div>
+					<label>Nom du produit:</label>
+					<input type="text" ng-model="newProduct.productName" />
+				</div>
+				<div>
+					<label>Type de produit:</label>
+					<input type="text" ng-model="newProduct.productType" />
+				</div>
+			</form>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class="btn btn-primary">Confirmer</a> <a href="#!" class="btn btn-danger modal-close">Annuler</a>
+		</div>
+	</div>
+	-->
+</div>

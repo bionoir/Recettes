@@ -1,0 +1,24 @@
+<div>
+	
+	<h2>Les unités de mesure</h2>
+	<br />
+	<input type="text" class="form-control" placeholder="Chercher ici..." ng-model="filter.unitName" />
+	<br />
+	<ul>
+		<li ng-repeat="unit in units | filter:filter.unitName">{{ unit.unitName }} ({{ unit.unitValue }})</li>
+	</ul>
+	
+	<br />
+	Nouvelle unité de mesure
+	<br />
+	<br />
+	Nom unité de mesure:
+	<input type="text" ng-model="newUnit.unitName" />
+	<br />
+	Abreviation:
+	<input type="text" ng-model="newUnit.unitValue" />
+	<br />
+	<br />
+	<button ng-disabled="!newUnit.unitName || !newUnit.unitValue"
+			ng-click="addUnit()">Ajouter</button>
+</div>
